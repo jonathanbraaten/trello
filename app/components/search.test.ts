@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import search from './search.vue';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { useSearch } from '../composables/useSearch';
 
 const mockSearch = ref('');
@@ -14,7 +14,10 @@ vi.mock('../composables/useSearch', () => {
   };
 });
 describe('Search', () => {
-  it.skip('sets input value and triggers submit with searchQuery, then it resets searchQuery to empty string', async () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+  it('sets input value and triggers submit with searchQuery, then it resets searchQuery to empty string', async () => {
     const wrapper = mount(search);
     const form = wrapper.find('[data-test-id="search-form"]');
     expect(form.exists()).toBe(true);
@@ -40,7 +43,5 @@ describe('Search', () => {
 
     form.trigger('submit');
     expect((input.element as HTMLInputElement).value).toBe('');
-
-    expect(mockSetSearch).not.toHaveBeenCalled();
   });
 });

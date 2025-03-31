@@ -44,4 +44,13 @@ describe('useSearch', () => {
       },
     });
   });
+
+  it('searchValue is an empty string, useRoute will be an empty object', () => {
+    const { search, setSearch } = useSearch();
+    setSearch('');
+    expect(search.value).toBe('');
+    expect(mockReplace.mock.calls[0]?.[0]).toEqual({
+      query: {},
+    });
+  });
 });

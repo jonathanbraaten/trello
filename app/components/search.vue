@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { useSearch } from '../composables/useSearch';
 const { setSearch } = useSearch()
 const searchQuery = ref('')
@@ -6,7 +7,7 @@ const searchQuery = ref('')
 
 function submit(e: Event) {
     e.preventDefault();
-    if (!searchQuery.value) return
+    /*   if (!searchQuery.value) return */
     setSearch(searchQuery.value)
     searchQuery.value = ''
 }

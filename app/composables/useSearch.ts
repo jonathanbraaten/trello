@@ -4,7 +4,7 @@ export function useSearch() {
   const search = ref('');
   function setSearch(n: string) {
     search.value = n.toLowerCase().trim().split(' ').join('');
-    router.replace({ query: { search: search.value } });
+    router.replace({ query: search.value ? { search: search.value } : {} });
   }
   return { search, setSearch };
 }
