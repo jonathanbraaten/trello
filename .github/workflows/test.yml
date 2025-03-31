@@ -16,7 +16,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-       
 
-      - name: Log message
-        run: echo "console.log('hello')"
+      - name: Run Vitest
+        run: npm run test
