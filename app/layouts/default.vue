@@ -13,6 +13,7 @@
         </div>
         <div class="w-screen h-full flex flex-col">
             <AppHeader class="border-b" />
+            <ListNav />
             <main class=" bg-gray-100 grow">
                 <NuxtPage />
             </main>
