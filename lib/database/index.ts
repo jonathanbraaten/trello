@@ -20,7 +20,9 @@ const config: PoolConfig = {
   user: process.env.DB_USER,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
-  port: 5432,
+  port: Number(process.env.DB_PORT),
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 2000,
 };
 
 export const pool = PoolConnection.getInstance(config);
