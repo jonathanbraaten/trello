@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils';
 import search from './search.vue';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { useSearch } from '../composables/useSearch';
+import { useSearchQuery } from '../composables/useSearchQuery';
 
 const mockSearch = ref('');
 const mockSetSearch = vi.fn();
-vi.mock('../composables/useSearch', () => {
+vi.mock('../composables/useSearchQuery', () => {
   return {
-    useSearch: () => ({
+    useSearchQuery: () => ({
       search: mockSearch,
       setSearch: mockSetSearch,
     }),

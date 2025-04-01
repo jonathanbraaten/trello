@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import { useSearch } from '../composables/useSearch';
-const { setSearch } = useSearch()
+import { useSearchQuery } from '../composables/useSearchQuery';
+const { setSearch } = useSearchQuery()
 const searchQuery = ref('')
 
 

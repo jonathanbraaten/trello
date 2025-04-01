@@ -1,5 +1,5 @@
 import { useRoute, useRouter } from 'vue-router';
-export function useSearch() {
+export function useSearchQuery() {
   const router = useRouter();
   const search = ref('');
   function setSearch(n: string) {

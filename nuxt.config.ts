@@ -4,7 +4,12 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  modules: ['@nuxt/test-utils/module', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+  modules: [
+    '@nuxt/test-utils/module',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/icon',
+    '@vueuse/nuxt',
+  ],
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
 });
